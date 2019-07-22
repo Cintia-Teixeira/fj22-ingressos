@@ -149,5 +149,12 @@
             </plugin>
         </plugins>
     </build>
+    
+    <developers>
+    	<developer>
+    		<name>Cintia Teixeira</name>
+    		<email>cinmts@gmail.com</email>
+    	</developer>
+    </developers>
 
 </project>
