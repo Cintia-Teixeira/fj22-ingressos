@@ -50,8 +50,8 @@ public class GerenciadorDeSessaoTest {
 	
 	@Test
 	public void garanteQueNaoDevePermitirSessoesIniciandoDentroDoHorarioDeUmaSessaoJaExistente() {
-		List<Sessao> sessoes = Arrays.asList(sessaoDasDez);
-		GerenciadorDeSessao gerenciador = new GerenciadorDeSessao(sessoes);
+		List<Sessao> sessoesDaSala = Arrays.asList(sessaoDasDez);
+		GerenciadorDeSessao gerenciador = new GerenciadorDeSessao(sessoesDaSala);
 		Sessao sessao = new Sessao(sessaoDasDez.getHorario().plusHours(1), rogueOne, sala3D);		
 		Assert.assertFalse(gerenciador.cabe(sessao));
 	}
