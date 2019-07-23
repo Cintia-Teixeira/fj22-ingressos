@@ -40,7 +40,7 @@ public class Sessao {
 		this.preco = sala.getPreco().add(filme.getPreco());
 	}
 	
-	public BigDecimal preco () {
+	public BigDecimal getPreco () {
 		return preco.setScale(2, RoundingMode.HALF_UP);
 	}
 	
