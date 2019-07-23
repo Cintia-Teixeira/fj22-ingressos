@@ -20,7 +20,7 @@ public class SalaForm {
     private String nome;
     
     @NotNull
-    private BigDecimal preco;
+    private BigDecimal preco = BigDecimal.ZERO;
 
     private List<Lugar> lugares = new ArrayList<>();
 
@@ -35,7 +35,7 @@ public class SalaForm {
     }
     
     public BigDecimal getPreco() {
-    	return preco;
+    	return preco.setScale(2, RoundingMode.HALF_UP);
     }
     
     public void setPreco(BigDecimal preco) {
