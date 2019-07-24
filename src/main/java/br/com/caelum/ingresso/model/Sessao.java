@@ -3,12 +3,15 @@ package br.com.caelum.ingresso.model;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalTime;
+import java.util.List;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.swing.Spring;
 
 @Entity
 public class Sessao {
@@ -78,6 +81,10 @@ public class Sessao {
 
 	public void setFilme(Filme filme) {
 		this.filme = filme;
+	}
+	
+	public Map<String, List<Lugar>> getMapaDeLugares() {
+		return sala.getMapaDeLugares();
 	}
 
 }
