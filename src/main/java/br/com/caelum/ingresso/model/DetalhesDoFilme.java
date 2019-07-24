@@ -92,7 +92,6 @@ public class DetalhesDoFilme {
 		this.avaliacao = avaliacao;
 	}
 	
-	
-	
+
 
 }
