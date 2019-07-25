@@ -42,9 +42,13 @@ public class FilmeController {
 		Filme filme = filmeDao.findOne(id);
 		
 		List<Sessao> sessoes = sessaoDao.buscaSessoesDoFilme(filme);
+		
+		System.out.println("1  " + filme.getNome());
 
 		Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme, DetalhesDoFilme.class);
 
+		System.out.println("2  " + detalhesDoFilme.get().getTitulo());
+		
 		modelAndView.addObject("sessoes", sessoes);
 		modelAndView.addObject("detalhes", detalhesDoFilme.orElse(new DetalhesDoFilme()));
 
@@ -72,6 +76,8 @@ public class FilmeController {
 			filme = filmeDao.findOne(id.get());
 		}
 
+		System.out.println(filme.getNome());
+		
 		modelAndView.addObject("filme", filme);
 
 		return modelAndView;

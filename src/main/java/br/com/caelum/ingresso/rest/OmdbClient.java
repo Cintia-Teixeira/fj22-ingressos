@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-//import br.com.caelum.ingresso.model.DetalhesDoFilme;
 import br.com.caelum.ingresso.model.Filme;
 
 @Component
@@ -19,9 +18,12 @@ public class OmdbClient {
 		
 		String url = String.format("https://omdb-fj22.herokuapp.com/movie?title=%s", titulo);
 		
+		System.out.println(url);
+		
 		try {
 			 return Optional.of(client.getForObject(url, tClass));
 		} catch (RestClientException e) {
+			
 			return Optional.empty();
 			
 		}
