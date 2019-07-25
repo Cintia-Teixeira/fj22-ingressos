@@ -13,23 +13,22 @@ import java.util.List;
 @Repository
 public class FilmeDao {
 
-    @PersistenceContext
-    private EntityManager manager;
+	@PersistenceContext
+	private EntityManager manager;
 
+	public Filme findOne(Integer id) {
+		return manager.find(Filme.class, id);
+	}
 
-    public Filme findOne(Integer id) {
-        return manager.find(Filme.class, id);
-    }
+	public void save(Filme filme) {
+		manager.persist(filme);
+	}
 
-    public void save(Filme filme) {
-        manager.persist(filme);
-    }
+	public List<Filme> findAll() {
+		return manager.createQuery("select f from Filme f", Filme.class).getResultList();
+	}
 
-    public List<Filme> findAll() {
-        return manager.createQuery("select f from Filme f", Filme.class).getResultList();
-    }
-
-    public void delete(Integer id) {
-        manager.remove(findOne(id));
-    }
+	public void delete(Integer id) {
+		manager.remove(findOne(id));
+	}
 }

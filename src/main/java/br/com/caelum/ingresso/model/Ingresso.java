@@ -11,8 +11,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import br.com.caelum.ingresso.model.descontos.Desconto;
-
 @Entity
 public class Ingresso {
 	
@@ -41,7 +39,7 @@ public class Ingresso {
 	public Ingresso(Sessao sessao, TipoDeIngresso tipoDeIngresso, Lugar lugar) {
 		this.sessao = sessao;
 		this.tipoDeIngresso = tipoDeIngresso;
-		this.preco = tipoDeIngresso.aplicarDescontoSobre(sessao.getPreco());
+		this.preco = this.tipoDeIngresso.aplicarDescontoSobre(sessao.getPreco());
 		this.lugar = lugar;
 	}
 	

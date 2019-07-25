@@ -47,7 +47,6 @@ public class FilmeController {
 
 		Optional<DetalhesDoFilme> detalhesDoFilme = client.request(filme, DetalhesDoFilme.class);
 
-		System.out.println("2  " + detalhesDoFilme.get().getTitulo());
 		
 		modelAndView.addObject("sessoes", sessoes);
 		modelAndView.addObject("detalhes", detalhesDoFilme.orElse(new DetalhesDoFilme()));
